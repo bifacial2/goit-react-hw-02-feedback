@@ -6,7 +6,6 @@ import shortid from 'shortid';
 class Statistics extends Component {
   static defaultProps = {
     stat: { good: 0, neutral: 0, bad: 0 },
-    // total: 0,
   };
   static propTypes = {
     stat: PropTypes.object.isRequired,
