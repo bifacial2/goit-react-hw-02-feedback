@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FeedbackOptions from './Feedback/FeedbackOptions';
+import FeedBackOptions from './Feedback/FeedBackOptions';
 import Statistics from './Statistics/Statistics';
 import Notification from './Notification/Notification';
 
@@ -10,10 +10,9 @@ class App extends Component {
     bad: 0,
   };
 
-  onLeaveFeedback = e => {
-    const currentBtnValue = e.currentTarget.value;
+  handleLeaveFeedback = option => {
     this.setState(prevState => ({
-      [currentBtnValue]: prevState[currentBtnValue] + 1,
+      [option]: prevState[option] + 1,
     }));
   };
 
@@ -33,9 +32,9 @@ class App extends Component {
     return (
       <div className="App">
         <section>
-          <FeedbackOptions
+          <FeedBackOptions
             options={btnNames}
-            onLeaveFeedback={this.onLeaveFeedback}
+            onLeaveFeedback={this.handleLeaveFeedback}
           />
           {this.countTotalFeedback() ? (
             <Statistics
